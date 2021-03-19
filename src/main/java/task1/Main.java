@@ -14,6 +14,7 @@ public class Main {
         String inputString = readToString();
 
         //Дальше все очень по-функциональному.;)
+        // Функция, которая составляет словарь, должна быть оформлена как реализатор Function
         Function<String, String[]> stringToArray = new Function<String, String[]>() {
             @Override
             public String[] apply(String s) {

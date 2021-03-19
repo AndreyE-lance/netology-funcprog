@@ -23,12 +23,14 @@ public class Main {
     }
 
     private static void getUnfairDeals(List<Stead> listStead, BigDecimal maxPrice) {
-        listStead.stream().filter(x -> x.getPriceForUnit().compareTo(maxPrice) > 0)
-                 .forEach(x -> System.out.println(x.toString()));
+        listStead.stream()
+                .filter(x -> x.getPriceForUnit().compareTo(maxPrice) > 0)
+                .forEach(x -> System.out.println(x.toString()));
     }
 
     private static void getFairDeals(List<Stead> listStead, BigDecimal maxPrice) {
-        listStead.stream().filter(x -> x.getPriceForUnit().compareTo(maxPrice) <= 0)
+        listStead.stream()
+                .filter(x -> x.getPriceForUnit().compareTo(maxPrice) <= 0)
                 .forEach(x -> System.out.println(x.toString()));
     }
 
