@@ -4,24 +4,21 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.math.BigInteger;
 import java.util.Arrays;
-import java.util.List;
 import java.util.function.Function;
-import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
         String inputString = readToString();
-        
+
         //Дальше все очень по-функциональному.;)
         // Функция, которая составляет словарь, должна быть оформлена как реализатор Function
-        Function<String, String[]> stringToArray = s -> Arrays.stream(s.split("\\s+")).distinct().toArray(String[]::new);
-
+        Function<String, String[]> stringToArray = s -> Arrays.stream(s.split("\\s+")).distinct().sorted().toArray(String[]::new);
         String[] array = stringToArray.apply(inputString);
-        List<String> list = Arrays.stream(array).sorted().collect(Collectors.toList());
         System.out.println("Словарь");
-        list.forEach(System.out::println);
+        for (String s : array) {
+            System.out.println(s);
+        }
     }
 
     private static String readToString() {
